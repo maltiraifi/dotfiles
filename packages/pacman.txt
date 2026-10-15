@@ -22,7 +22,6 @@ brightnessctl
 pipewire
 pipewire-alsa
 pipewire-pulse
-pipewire-jack
 wireplumber
 networkmanager
 network-manager-applet
