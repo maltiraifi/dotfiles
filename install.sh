@@ -32,6 +32,17 @@ done
 grep -rIl --null "__HOME__" "$CFG/waybar" "$CFG/hypr" 2>/dev/null | xargs -0 -r sed -i "s#__HOME__#$HOME#g"
 chmod +x "$CFG"/hypr/scripts/* "$CFG"/hypr/UserScripts/* "$CFG"/hypr/*.sh 2>/dev/null || true
 
+echo "==> Shell (zsh + oh-my-zsh)"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+ZC="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+[ -d "$ZC/plugins/zsh-autosuggestions" ] || git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions "$ZC/plugins/zsh-autosuggestions"
+[ -d "$ZC/plugins/zsh-syntax-highlighting" ] || git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZC/plugins/zsh-syntax-highlighting"
+[ -e "$HOME/.zshrc" ] && { mkdir -p "$BACKUP"; mv "$HOME/.zshrc" "$BACKUP/"; }
+cp "$REPO/shell/zshrc" "$HOME/.zshrc"
+grep -q '^shell zsh' "$CFG/kitty/kitty.conf" || echo 'shell zsh' >> "$CFG/kitty/kitty.conf"
+
 echo "==> Wallpapers"
 mkdir -p "$HOME/Pictures/wallpapers"
 cp -an "$REPO"/wallpapers/. "$HOME/Pictures/wallpapers/"
