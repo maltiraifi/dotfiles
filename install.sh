@@ -39,6 +39,7 @@ fi
 ZC="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 [ -d "$ZC/plugins/zsh-autosuggestions" ] || git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions "$ZC/plugins/zsh-autosuggestions"
 [ -d "$ZC/plugins/zsh-syntax-highlighting" ] || git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZC/plugins/zsh-syntax-highlighting"
+cp "$REPO/shell/agnosterzak.zsh-theme" "$ZC/themes/"
 [ -e "$HOME/.zshrc" ] && { mkdir -p "$BACKUP"; mv "$HOME/.zshrc" "$BACKUP/"; }
 cp "$REPO/shell/zshrc" "$HOME/.zshrc"
 grep -q '^shell zsh' "$CFG/kitty/kitty.conf" || echo 'shell zsh' >> "$CFG/kitty/kitty.conf"
