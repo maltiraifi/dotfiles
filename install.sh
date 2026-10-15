@@ -29,7 +29,7 @@ for src in "$REPO"/config/*; do
   cp -a "$src" "$dst"
 done
 # Replace the placeholder with this user's home
-grep -rIl '__HOME__' "$CFG/waybar" "$CFG/hypr" 2>/dev/null | xargs -r sed -i "s#__HOME__#$HOME#g"
+grep -rIl --null "__HOME__" "$CFG/waybar" "$CFG/hypr" 2>/dev/null | xargs -0 -r sed -i "s#__HOME__#$HOME#g"
 chmod +x "$CFG"/hypr/scripts/* "$CFG"/hypr/UserScripts/* "$CFG"/hypr/*.sh 2>/dev/null || true
 
 echo "==> Wallpapers"
