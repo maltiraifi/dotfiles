@@ -1,0 +1,119 @@
+// ### Top Arthur ## //
+
+
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top", 
+"position": "top",
+"exclusive": true,
+"passthrough": false,
+"gtk-layer-shell": true,
+"expand-center": true,
+"fixed-center": false,
+"margin-left": 8,
+"margin-right": 8,
+"margin-top": 3,
+
+"modules-left": [
+  "hyprland/workspaces#kanji",
+  "network", 
+],
+
+"modules-center": [
+  "hyprland/window"
+],
+
+"hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+        "": " Desktop "
+      },
+  },
+
+"modules-right": [
+  "mpris",
+  "custom/separator#line",
+  //"group/audio",
+  //"custom/separator#line",
+  "cpu#forest",
+  "custom/separator#line",
+  "memory#forest",
+  "custom/separator#line",
+  "disk#forest",
+  "custom/separator#line", 
+  "battery#forest",
+  "custom/separator#line", 
+  "clock#2",
+  "custom/power",
+],
+
+"disk#forest": {
+	"interval": 30,
+	//"format": "Disk    󰋊",
+	"path": "/",
+	//"format-alt-click": "click",
+	"format": "󰋊 {used} {percentage_used}%",
+  "on-click-right": "baobab",
+//	"tooltip": true,
+//	"tooltip-format": "Disk    {used} used out of {total} on {path} ({percentage_used}%)",
+},
+
+"memory#forest": {
+	"interval": 10,
+	"format": "󰾆 {used:0.1f}G/{total:0.1f}G",
+	"format-alt": "Ram    {percentage}%    󰾆",
+	"format-alt-click": "click",
+	"tooltip": true,
+	"tooltip-format": "Ram    {used:0.1f}GB/{total:0.1f}G",
+	"on-click-right": "kitty --title btop sh -c 'btop'"
+},
+
+
+"cpu#forest": {
+	"format": "󰍛 {usage}%",
+	"interval": 1,
+	"min-length": 5,
+	"format-alt-click": "click",
+	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+	"format-icons": [
+		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+	],
+	"on-click-right": "gnome-system-monitor",
+},
+
+"battery#forest": {
+	//"interval": 5,
+	"align": 0,
+	"rotate": 0,
+	//"bat": "BAT1",
+	//"adapter": "ACAD",
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+	"format": "{icon} {capacity}%",
+	"format-charging": " {capacity}%",
+	"format-plugged": "󱘖 {capacity}%",
+	"format-alt-click": "click",
+	"format-full": "{icon} Full",
+	"format-alt": "{icon} {time}",
+	"format-icons": [
+		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+	],
+	"format-time": "{H}h {M}min",
+	"tooltip": true,
+	"tooltip-format": "{timeTo} {power}w",
+	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
+},
+
+}

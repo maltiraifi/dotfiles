@@ -1,0 +1,6 @@
+wallust
+python-pywal
+wlogout
+mpvpaper
+gtk-engine-murrine
+pokemon-colorscripts-git

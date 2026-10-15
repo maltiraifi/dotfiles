@@ -1,0 +1,182 @@
+* {
+  /* Base font settings */
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 97%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+/* Import pywal colors */
+
+@import '__HOME__/.cache/wal/colors-waybar.css';
+
+/* Main waybar styling */
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: @foreground;
+  border-radius: 10px;
+  box-shadow:
+    0 10px 15px -3px rgba(255, 0, 0, 0.3),
+    0 4px 6px -4px rgba(225, 0, 0, 0.3);
+}
+
+/* Tooltip styling */
+tooltip {
+  background: @background;
+  opacity: 0.9;
+  border-radius: 5px;
+  border: 1px solid @color5;
+}
+
+tooltip label {
+  color: @foreground;
+  padding: 5px;
+}
+
+/* Workspace buttons */
+#workspaces button {
+  /*color: #d3d4ee;*/
+  color: @color6;
+  background: transparent;
+  padding: 4px 5px;
+  margin: 0px 0px;
+  border-radius: 5px;
+}
+
+#workspaces button.active {
+  color: @background;
+  background-color: @color5;
+}
+
+#workspaces button:hover {
+  background: rgba(157, 122, 211, 0.2);
+  color: @foreground;
+}
+
+#workspaces button.urgent {
+  background-color: @color1;
+  color: @background;
+}
+
+/* Window module - highlighted with accent color */
+/*#window,
+#hyprland-window {
+  background-color: #9d7ad3;
+  color: #010104;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 40pc;
+}*/
+#window,
+#hyprland-window {
+  background-color: @color5;
+  color: @background;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.modules-center {
+  background: @color5;
+  /*color: #010104;*/
+}
+
+.modules-left {
+  padding-left: 0;
+}
+
+#hyprland-window {
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+/*
+window#waybar.empty,
+window#waybar.empty #window,
+window#waybar.empty #hyprland-window {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0px;
+  border: 0px;
+}*/
+
+/*
+window#waybar.empty,
+#window,
+#hyprland-window,
+.modules-center {
+  background-color: blue;
+}*/
+
+/*
+window#waybar.empty,
+window#waybar.empty #window,
+window#waybar.empty #hyprland-window,
+window#waybar.empty .modules-center {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+*/
+
+
+/* Common styling for all modules */
+#idle_inhibitor,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#mpris,
+#network,
+#custom-power,
+#custom-separator {
+  padding: 0 2px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: @color5;
+}
+
+/* Specific module styling */
+
+#cpu {
+  color: @color6;
+}
+
+#memory {
+  color: @color4;
+}
+
+#disk {
+  color: @color5;
+}
+
+#battery {
+  color: @color2;
+}
+
+#idle_inhibitor {
+  color: @foreground;
+}
+
+#mpris {
+  color: @color6;
+}
+
+#clock {
+  color: @color6;
+  font-weight: bold;
+}
+
+#custom-power {
+  color: @color1;
+  margin-right: 6px;
+}

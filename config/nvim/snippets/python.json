@@ -1,0 +1,22 @@
+{
+  "Python ML Essential Libraries": {
+    "scope": "python",
+    "prefix": "mle",
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "from pandas import Series, DataFrame"
+    ],
+    "description": "Initializes essential ML libraries in Python"
+  },
+  "Comment sections heading space": {
+    "scope": "python",
+    "prefix": "h1",
+    "body": [
+      "# =============================================================================",
+      "# Section ",
+      "# ============================================================================="
+    ],
+    "description": "Provides heading for sections in commentary code"
+  }
+}

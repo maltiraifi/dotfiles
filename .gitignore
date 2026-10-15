@@ -1,0 +1,6 @@
+*.bak
+*.save
+.cache/
+__pycache__/
+wallpapers/*
+!wallpapers/.gitkeep

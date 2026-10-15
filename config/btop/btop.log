@@ -1,0 +1,19 @@
+
+2025/04/15 (19:12:13) | ===> btop++ v.1.4.0
+2025/04/15 (19:12:13) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/25 (21:35:31) | ===> btop++ v.1.4.0
+2025/04/25 (21:35:31) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/04/25 (21:35:31) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/25 (21:35:49) | ===> btop++ v.1.4.0
+2025/04/25 (21:35:49) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/04/25 (21:35:49) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/26 (00:49:55) | ===> btop++ v.1.4.0
+2025/04/26 (00:49:55) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/04/26 (00:49:55) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/26 (00:52:34) | ===> btop++ v.1.4.0
+2025/04/26 (00:52:34) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/04/26 (00:52:34) | WARNING: Intel GPU: Failed to initialize PMU
